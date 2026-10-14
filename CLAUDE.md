@@ -54,7 +54,7 @@ User documentation lives in the platform's repository:
 ## Common commands
 
 ```bash
-make init              # npm dev dependencies, pre-commit hooks
+make init              # npm dev dependencies, venv/ (pre-commit, codespell), hooks
 make test              # Vitest, then Theme Check
 make lint              # ESLint and Prettier (with the Liquid plugin)
 make embed-version V=0.9.1   # pin another version of the embed script

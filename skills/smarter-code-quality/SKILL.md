@@ -16,7 +16,7 @@ description: Use before finishing any change to smarter-shopify, to lint and for
 
 ```console
 make lint
-git diff --name-only | xargs pre-commit run --files
+git diff --name-only | xargs venv/bin/pre-commit run --files
 ```
 
 Use `xargs`: under zsh, `--files $FILES` is one argument. Let Prettier format

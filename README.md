@@ -3,6 +3,7 @@
 > Add a [Smarter](https://smarter.sh) chatbot to a Shopify store, from the theme editor: a chat launcher on every
 > page, and a Smarter Chat block for any section.
 
+[![Build](https://github.com/smarter-sh/smarter-shopify/actions/workflows/pushMain.yml/badge.svg?branch=main)](https://github.com/smarter-sh/smarter-shopify/actions/workflows/pushMain.yml)
 [![Test](https://github.com/smarter-sh/smarter-shopify/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/smarter-sh/smarter-shopify/actions/workflows/test.yml)
 [![License: AGPL v3](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)](LICENSE.txt)
 
