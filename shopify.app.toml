@@ -1,0 +1,25 @@
+# Smarter Chat for Shopify: an extension-only app (doc/adr/003-extension-only-app.md), whose only part is the theme
+# app extension in extensions/smarter-chat. It has no server, no access scopes and no webhooks.
+#
+# client_id is your app's, which `shopify app config link` writes here when it creates or links the app in your
+# Shopify Partner account. It identifies the app; it isn't a secret, but it is yours: don't commit it to this
+# repository.
+client_id = ""
+name = "Smarter Chat"
+application_url = "https://shopify.dev/apps/default-app-home"
+embedded = true
+
+[access_scopes]
+scopes = ""
+
+[auth]
+redirect_urls = ["https://shopify.dev/apps/default-app-home/api/auth"]
+
+[webhooks]
+api_version = "2025-07"
+
+[pos]
+embedded = false
+
+[build]
+include_config_on_deploy = true

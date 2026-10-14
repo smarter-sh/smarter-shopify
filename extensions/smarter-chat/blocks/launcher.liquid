@@ -1,0 +1,74 @@
+{%- comment -%}
+  The app embed: a chat launcher in a corner of every page of the storefront. It writes the embed script's tag, with
+  the settings as data- attributes, which the script reads. Nothing is written without a chatbot url.
+  See doc/adr/005-blocks.md and doc/adr/006-security.md.
+{%- endcomment -%}
+{%- assign chatbot = block.settings.chatbot | strip -%}
+{%- if chatbot != blank -%}
+  {%- capture script_url -%}{%- render 'smarter-chat-script-url' -%}{%- endcapture -%}
+  <script
+    src="{{ script_url | strip | escape }}"
+    data-chatbot="{{ chatbot | escape }}"
+    data-position="{{ block.settings.position | escape }}"
+    data-label="{{ block.settings.label | default: 'Chat' | escape }}"
+    data-color="{{ block.settings.color | escape }}"
+    {%- if block.settings.api_key != blank %}
+      data-api-key="{{ block.settings.api_key | strip | escape }}"
+    {% endif %}
+    {%- if block.settings.open %}
+      data-open="true"
+    {% endif %}
+    async
+  ></script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:launcher.name",
+  "target": "body",
+  "settings": [
+    {
+      "type": "text",
+      "id": "chatbot",
+      "label": "t:settings.chatbot.label",
+      "info": "t:settings.chatbot.info",
+      "placeholder": "https://support.3141-5926-5359.api.example.com/"
+    },
+    {
+      "type": "text",
+      "id": "api_key",
+      "label": "t:settings.api_key.label",
+      "info": "t:settings.api_key.info"
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "t:launcher.settings.position.label",
+      "options": [
+        { "value": "bottom-right", "label": "t:launcher.settings.position.options.bottom_right" },
+        { "value": "bottom-left", "label": "t:launcher.settings.position.options.bottom_left" }
+      ],
+      "default": "bottom-right"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "t:launcher.settings.label.label",
+      "info": "t:launcher.settings.label.info",
+      "default": "Chat"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:launcher.settings.color.label",
+      "default": "#ff5733"
+    },
+    {
+      "type": "checkbox",
+      "id": "open",
+      "label": "t:launcher.settings.open.label",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

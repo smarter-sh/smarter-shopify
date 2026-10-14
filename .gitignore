@@ -1,0 +1,21 @@
+# dependencies and build output
+node_modules/
+coverage/
+build/
+.shopify/
+
+# os files
+.DS_Store
+Thumbs.db
+
+# editors
+.idea/
+*.swp
+
+# logs
+*.log
+
+# typical secrets files
+.env
+.env.*
+.npmrc

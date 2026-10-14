@@ -1,0 +1,54 @@
+{%- comment -%}
+  The app block: the chat, in a section of a page. It writes a <smarter-chat> element and the embed script's tag,
+  which defines the element once, however many times it is on the page. Nothing is written without a chatbot url.
+  See doc/adr/005-blocks.md and doc/adr/006-security.md.
+{%- endcomment -%}
+{%- assign chatbot = block.settings.chatbot | strip -%}
+{%- if chatbot != blank -%}
+  {%- capture script_url -%}{%- render 'smarter-chat-script-url' -%}{%- endcapture -%}
+  <div class="smarter-chat-block" {{ block.shopify_attributes }}>
+    <smarter-chat
+      chatbot="{{ chatbot | escape }}"
+      height="{{ block.settings.height | default: 600 }}px"
+      width="100%"
+      {%- if block.settings.api_key != blank %}
+        api-key="{{ block.settings.api_key | strip | escape }}"
+      {% endif %}
+    ></smarter-chat>
+  </div>
+  <script src="{{ script_url | strip | escape }}" async></script>
+{%- elsif request.design_mode -%}
+  <p class="smarter-chat-block" {{ block.shopify_attributes }}>{{ 'chat.placeholder' | t }}</p>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:chat.name",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "chatbot",
+      "label": "t:settings.chatbot.label",
+      "info": "t:settings.chatbot.info",
+      "placeholder": "https://support.3141-5926-5359.api.example.com/"
+    },
+    {
+      "type": "text",
+      "id": "api_key",
+      "label": "t:settings.api_key.label",
+      "info": "t:settings.api_key.info"
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "label": "t:chat.settings.height.label",
+      "min": 300,
+      "max": 1000,
+      "step": 20,
+      "unit": "px",
+      "default": 600
+    }
+  ]
+}
+{% endschema %}
