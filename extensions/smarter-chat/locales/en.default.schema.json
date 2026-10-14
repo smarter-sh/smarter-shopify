@@ -1,0 +1,42 @@
+{
+  "launcher": {
+    "name": "Smarter Chat launcher",
+    "settings": {
+      "position": {
+        "label": "Position",
+        "options": {
+          "bottom_right": "Bottom right",
+          "bottom_left": "Bottom left"
+        }
+      },
+      "label": {
+        "label": "Label",
+        "info": "The button's name, for screen readers."
+      },
+      "color": {
+        "label": "Button color"
+      },
+      "open": {
+        "label": "Start open"
+      }
+    }
+  },
+  "chat": {
+    "name": "Smarter Chat",
+    "settings": {
+      "height": {
+        "label": "Height"
+      }
+    }
+  },
+  "settings": {
+    "chatbot": {
+      "label": "Chatbot url",
+      "info": "The url of your deployed Smarter LLMClient. Its manifest must allow your store's origins in spec.config.prompt.allowedOrigins."
+    },
+    "api_key": {
+      "label": "Api key",
+      "info": "Only for an LLMClient that requires one. It is written into your pages, where any visitor can read it: use a key dedicated to this store."
+    }
+  }
+}

@@ -1,0 +1,3 @@
+# The theme app extension: an app embed (blocks/launcher.liquid) and an app block (blocks/chat.liquid).
+name = "smarter-chat"
+type = "theme"
