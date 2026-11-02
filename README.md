@@ -6,6 +6,7 @@
 [![Build](https://github.com/smarter-sh/smarter-shopify/actions/workflows/pushMain.yml/badge.svg?branch=main)](https://github.com/smarter-sh/smarter-shopify/actions/workflows/pushMain.yml)
 [![Test](https://github.com/smarter-sh/smarter-shopify/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/smarter-sh/smarter-shopify/actions/workflows/test.yml)
 [![License: AGPL v3](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)](LICENSE.txt)
+[![Slack](https://img.shields.io/badge/Slack-The%20Smarter%20Project-4A154B?logo=slack&logoColor=white)](https://join.slack.com/t/thesmarterproject/shared_invite/zt-4f0t6v46q-e2c5Of4hS4fBr_XwfQARCw)
 
 This is an extension-only Shopify app: a [theme app extension](https://shopify.dev/docs/apps/build/online-store/theme-app-extensions)
 with an **app embed** (Smarter Chat launcher) and an **app block** (Smarter Chat), and no server. The chat itself is the
