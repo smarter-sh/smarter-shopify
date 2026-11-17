@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 
 
+## [0.1.1-alpha.3](https://github.com/smarter-sh/smarter-shopify/compare/v0.1.1-alpha.2...v0.1.1-alpha.3) (2026-11-17)
+
+### Bug Fixes
+
+* **embed:** load [@smarter](https://github.com/smarter).sh/ui-chat 1.1.10 ([246b98a](https://github.com/smarter-sh/smarter-shopify/commit/246b98a2c84755b5d3ab66fdda373727e72b3e0d))
+
 ## [0.1.1-alpha.2](https://github.com/smarter-sh/smarter-shopify/compare/v0.1.1-alpha.1...v0.1.1-alpha.2) (2026-11-10)
 
 ### Bug Fixes
